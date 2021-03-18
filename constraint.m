@@ -1,4 +1,5 @@
 function [c, ceq] = constraint(x, objects)
-   c = (x .* objects.weight) - 10;
+   pesos = sum(x .* reshape([objects.weight], [1 7]));
+   c = pesos - 10;
    ceq = [];
 end
